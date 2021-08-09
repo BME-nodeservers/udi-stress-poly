@@ -1,0 +1,35 @@
+<nodeDefs>
+  <nodeDef id="stress" nodeType="139" nls="str">
+    <sts>
+      <st id="ST" editor="bool" />
+      <st id="GV0" editor="raw" />
+      <st id="GV1" editor="raw" />
+      <st id="GV2" editor="raw" />
+      <st id="GV3" editor="raw" />
+      <st id="GV4" editor="raw" />
+      <st id="GV5" editor="raw" />
+      <st id="GV6" editor="raw" />
+      <st id="GV7" editor="raw" />
+      <st id="GV8" editor="raw" />
+      <st id="GV9" editor="raw" />
+      <st id="GV10" editor="raw" />
+      <st id="GV11" editor="raw" />
+      <st id="GV12" editor="raw" />
+      <st id="GV13" editor="raw" />
+      <st id="GV14" editor="raw" />
+      <st id="GV15" editor="raw" />
+      <st id="GV16" editor="raw" />
+      <st id="GV17" editor="raw" />
+      <st id="GV18" editor="raw" />
+      <st id="GV19" editor="raw" />
+      <st id="GV20" editor="raw" />
+    </sts>
+    <cmds>
+      <sends />
+      <accepts>
+        <cmd id="DISCOVER" />
+      </accepts>
+    </cmds>
+  </nodeDef>
+</nodeDefs>
+

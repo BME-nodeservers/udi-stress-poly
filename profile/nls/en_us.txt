@@ -1,0 +1,26 @@
+# stress node
+ND-stress-NAME = Stress Node
+ND-stress-ICON = Output
+ST-str-ST-NAME = NodeServer Online
+ST-str-GV0-NAME = raw data 0
+ST-str-GV1-NAME = raw data 1
+ST-str-GV2-NAME = raw data 2
+ST-str-GV3-NAME = raw data 3
+ST-str-GV4-NAME = raw data 4
+ST-str-GV5-NAME = raw data 5
+ST-str-GV6-NAME = raw data 6
+ST-str-GV7-NAME = raw data 7
+ST-str-GV8-NAME = raw data 8
+ST-str-GV9-NAME = raw data 9
+ST-str-GV10-NAME = raw data 10
+ST-str-GV11-NAME = raw data 11
+ST-str-GV12-NAME = raw data 12
+ST-str-GV13-NAME = raw data 13
+ST-str-GV14-NAME = raw data 14
+ST-str-GV15-NAME = raw data 15
+ST-str-GV16-NAME = raw data 16
+ST-str-GV17-NAME = raw data 17
+ST-str-GV18-NAME = raw data 18
+ST-str-GV19-NAME = raw data 19
+ST-str-GV20-NAME = raw data 20
+CMD-str-DISCOVER-NAME = Re-Discover
