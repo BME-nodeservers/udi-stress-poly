@@ -120,7 +120,10 @@ def poll(polltype):
             nodes = polyglot.getNodes()
             for n in nodes:
                 for d in drivers:
-                    nodes[n].setDriver(d, count, True, True)
+                    if d == 'GV10' or d == 'GV0':
+                        nodes[n].setDriver(d, count * -1, True, True)
+                    else:
+                        nodes[n].setDriver(d, count, True, True)
 
             if Parameters['getDrivers'] is not None and 'TRUE' in Parameters['getDrivers']:
                 for n in nodes:
