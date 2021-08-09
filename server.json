@@ -8,6 +8,7 @@
     "notice": "",
     "shortPoll": "60",
     "longPoll": "600",
+	"logLevel": "WARNING",
     "profile_version": "1.0.0",
 	"customParams": {
 		"Nodes" : ""
