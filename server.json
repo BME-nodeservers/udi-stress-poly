@@ -11,7 +11,8 @@
 	"logLevel": "WARNING",
     "profile_version": "1.0.0",
 	"customParams": {
-		"Nodes" : ""
+		"Nodes" : "",
+		"Cycles" : 0
 	},
     "credits": [
     	{

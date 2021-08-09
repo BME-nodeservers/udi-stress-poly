@@ -59,8 +59,10 @@ def wait_for_node_event():
 def discover(params):
     global configured
     global Notices
+    global Parameters
 
     validNodes = False
+    validCycles = False
     configured = False
     Parameters.load(params)
     Notices.clear()
@@ -74,6 +76,17 @@ def discover(params):
     else:
         LOGGER.error('Missing node count')
 
+    if Parameters['Cycles'] is not None:
+        cycles = int(Parameters['Cycles'])
+        if cycles > 0:
+            validCycles = True
+        else:
+            LOGGER.error('Invalid number of cycles {}, must be > 0'.format(cycles))
+            Parameters['Cycles'] = 0
+    else:
+        LOGGER.error('Missing cycle count')
+        Parameters['Cycles'] = 0
+
     if validNodes:
         for i in range(0, ncount):
             address = 'stress_{}'.format(i)
@@ -84,6 +97,9 @@ def discover(params):
         configured = True
     else:
         Notices['nodecount'] = 'Enter the number of nodes to create'
+
+    if not validCycles:
+        Notices['cycles'] = 'Enter the number of cycles to add/delete'
 
 def poll(polltype):
     global configured
@@ -96,18 +112,40 @@ def poll(polltype):
             'GV15', 'GV16', 'GV17', 'GV18', 'GV19', 'GV20'
             ]
 
+
     if configured:
-        nodes = polyglot.getNodes()
-        for n in nodes:
-            for d in drivers:
-                nodes[n].setDriver(d, count, True, True)
+        n_cycles = int(Parameters['Cycles'])
+        n_nodes = int(Parameters['Nodes'])
 
-        for n in nodes:
-            for d in drivers:
-                if nodes[n].getDriver(d) != count:
-                    LOGGER.error('{} Failed to update driver {}'.format(n, d))
+        if n_cycles == 0:
+            LOGGER.info('Starting driver stress test')
+            nodes = polyglot.getNodes()
+            for n in nodes:
+                for d in drivers:
+                    nodes[n].setDriver(d, count, True, True)
 
-        count += 1
+            for n in nodes:
+                for d in drivers:
+                    if nodes[n].getDriver(d) != count:
+                        LOGGER.error('{} Failed to update driver {}'.format(n, d))
+
+            count += 1
+        else:
+            LOGGER.info('Starting node add/delete stress test')
+            for c in range(0, n_cycles):
+                nodes = polyglot.getNodes()
+                LOGGER.info('Deleteing nodes cycle {}'.format(c))
+                for n in nodes:
+                    polyglot.delNode(n)
+
+                LOGGER.info('Adding nodes cycle {}'.format(c))
+                for i in range(0, n_nodes):
+                    address = 'stress_{}'.format(i)
+                    node = StressNode(polyglot, address, address, address)
+                    polyglot.addNode(node)
+                    wait_for_node_event()
+
+
 
 def stop():
     nodes = polyglot.getNodes()
