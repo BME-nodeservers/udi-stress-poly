@@ -18,8 +18,8 @@
     	{
     		"title": "Stress: Stress testing ISY/Polyglot",
     		"author": "Bob Paauwe",
-    		"version": "1.0.0",
-    		"date": "August 8, 2021",
+    		"version": "1.1.0",
+    		"date": "August 9, 2021",
     		"source": "https://github.com/BME-nodeservers/udi-stress-poly",
 			"license": "https://github.com/BME-nodeservers/udi-sress-poly/LICENSE"
 		}

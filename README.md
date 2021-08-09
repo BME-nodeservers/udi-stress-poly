@@ -34,5 +34,7 @@ The settings for this node are:
 
 # Release Notes
 
+- 1.1.0 08/09/2021
+   - Add node add/delte stress test
 - 1.0.0 08/06/2021
    - Initial version published to github
