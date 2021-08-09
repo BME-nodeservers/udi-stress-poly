@@ -88,30 +88,24 @@ def poll(polltype):
     global configured
     global count
 
+    drivers = [
+            'GV0', 'GV1', 'GV2', 'GV3', 'GV4',
+            'GV5', 'GV6', 'GV7', 'GV8', 'GV9',
+            'GV10', 'GV11', 'GV12', 'GV13', 'GV14',
+            'GV15', 'GV16', 'GV17', 'GV18', 'GV19', 'GV20'
+            ]
+
     if configured:
         nodes = polyglot.getNodes()
         for n in nodes:
-            nodes[n].setDriver('GV0', count, True, True)
-            nodes[n].setDriver('GV1', count, True, True)
-            nodes[n].setDriver('GV2', count, True, True)
-            nodes[n].setDriver('GV3', count, True, True)
-            nodes[n].setDriver('GV4', count, True, True)
-            nodes[n].setDriver('GV5', count, True, True)
-            nodes[n].setDriver('GV6', count, True, True)
-            nodes[n].setDriver('GV7', count, True, True)
-            nodes[n].setDriver('GV8', count, True, True)
-            nodes[n].setDriver('GV9', count, True, True)
-            nodes[n].setDriver('GV10', count, True, True)
-            nodes[n].setDriver('GV11', count, True, True)
-            nodes[n].setDriver('GV12', count, True, True)
-            nodes[n].setDriver('GV13', count, True, True)
-            nodes[n].setDriver('GV14', count, True, True)
-            nodes[n].setDriver('GV15', count, True, True)
-            nodes[n].setDriver('GV16', count, True, True)
-            nodes[n].setDriver('GV17', count, True, True)
-            nodes[n].setDriver('GV18', count, True, True)
-            nodes[n].setDriver('GV19', count, True, True)
-            nodes[n].setDriver('GV20', count, True, True)
+            for d in drivers:
+                nodes[n].setDriver(d, count, True, True)
+
+        for n in nodes:
+            for d in drivers
+                if nodes[n].getDriver(d) != count:
+                    LOGGER.error('{} Failed to update driver {}'.format(n, d))
+
         count += 1
 
 def stop():
