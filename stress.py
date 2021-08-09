@@ -82,10 +82,8 @@ def discover(params):
             validCycles = True
         else:
             LOGGER.error('Invalid number of cycles {}, must be > 0'.format(cycles))
-            Parameters['Cycles'] = 0
     else:
         LOGGER.error('Missing cycle count')
-        Parameters['Cycles'] = 0
 
     if validNodes:
         for i in range(0, ncount):
