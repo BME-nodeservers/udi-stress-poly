@@ -58,6 +58,7 @@ def wait_for_node_event():
 
 def discover(params):
     global configured
+    global Notices
 
     validNodes = False
     configured = False
