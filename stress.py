@@ -124,10 +124,11 @@ def poll(polltype):
                 for d in drivers:
                     nodes[n].setDriver(d, count, True, True)
 
-            for n in nodes:
-                for d in drivers:
-                    if nodes[n].getDriver(d) != count:
-                        LOGGER.error('{} Failed to update driver {}'.format(n, d))
+            if Parameters['getDrivers'] is not None and 'TRUE' in Parameters['getDrivers']:
+                for n in nodes:
+                    for d in drivers:
+                        if nodes[n].getDriver(d) != count:
+                            LOGGER.error('{} Failed to update driver {}'.format(n, d))
 
             count += 1
         else:

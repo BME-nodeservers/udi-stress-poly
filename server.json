@@ -12,7 +12,8 @@
     "profile_version": "1.0.0",
 	"customParams": {
 		"Nodes" : "",
-		"Cycles" : 0
+		"Cycles" : 0,
+		"getDrivers": "FALSE"
 	},
     "credits": [
     	{
