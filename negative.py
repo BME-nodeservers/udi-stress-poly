@@ -50,7 +50,7 @@ def poll(polltype):
     node = polyglot.getNode('controller')
     node.setDriver('GV0', count, True, True)
     node.setDriver('GV1', (count * -1), True, True)
-    Notices['count'] = 'Current count is {}'.format(count))
+    Notices['count'] = 'Current count is {}'.format(count)
     count += 1
 
 def stop():
