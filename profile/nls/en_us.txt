@@ -1,6 +1,8 @@
 # stress node
 ND-stress-NAME = Stress Node
 ND-stress-ICON = Output
+ND-test-NAME = Test Node
+ND-test-ICON = Input
 ST-str-ST-NAME = NodeServer Online
 ST-str-GV0-NAME = raw data 0
 ST-str-GV1-NAME = raw data 1
