@@ -2,7 +2,7 @@
     "name": "Stress",
     "docs": "https://github.com/BME-nodeservers/udi-stress-poly/README.md",
     "type": "python3",
-    "executable": "stress.py",
+    "executable": "negative.py",
     "install": "install.sh",
     "description": "Stress test ISY/Polyglot by creating a lot of nodes with a lot of driversSY",
     "notice": "",
