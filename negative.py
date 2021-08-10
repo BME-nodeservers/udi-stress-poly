@@ -42,14 +42,21 @@ def discover(params):
     global Notices
     global Parameters
 
+    Parameters.load(params)
+
 
 def poll(polltype):
     global configured
     global count
 
+    if Parameters['multiplier'] is not None:
+        mult = int(Parameters['multiplier'])
+    else:
+        mult = 1
+
     node = polyglot.getNode('controller')
     node.setDriver('GV0', count, True, True)
-    node.setDriver('GV1', (count * -1), True, True)
+    node.setDriver('GV1', (count * mult), True, True)
     Notices['count'] = 'Current count is {}'.format(count)
     count += 1
 

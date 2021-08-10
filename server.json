@@ -13,7 +13,8 @@
 	"customParams": {
 		"Nodes" : "",
 		"Cycles" : 0,
-		"getDrivers": "FALSE"
+		"getDrivers": "FALSE",
+		"multiplier": 1
 	},
     "credits": [
     	{
